@@ -1,6 +1,6 @@
 # People-counter-app
 This project is from the Udacity nano degree Intel edge AI IoT program. The main idea to this project is use a model from any framework, and optimze it bu using openVino toolkit. Make the infrence on the video from the resources directory by using optimized model. And count the number of people in the frame and total number of people in the video. Calculte the average time of person stayed in video. And send all these calculated values along-with the image to the webpage using Mosca server.
-![DETR](./resources/peopl_counter_design_block.png)
+![Arch](./resources/peopl_counter_design_block.png)
 # What is it:
 OpenVino toolkit is used to optimize the model. During optimization opevino decrease the model size and oprations. Due drcrease in the size model load time is also decrease and inference time is also decrease. Hence we deploy the optimized model on low cost embedded devices.
 # About the code:
