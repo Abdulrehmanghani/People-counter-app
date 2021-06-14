@@ -25,7 +25,7 @@ We have use [SSD MobileNet v2 ](http://download.tensorflow.org/models/object_det
   <tbody>
     <tr>
       <th>0</th>
-      <td>SSD MobileNet v2 320x320</td>
+      <td>SSD MobileNet v2</td>
       <td>19</td>
       <td>20.2</td>
       <td>Boxes</td> 
