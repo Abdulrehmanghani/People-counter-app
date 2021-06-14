@@ -111,8 +111,23 @@ def infer_on_stream(args,client):
     infer_network = Network()
 
     # Set Probability threshold for detections
-   
+    prob_threshold = args.prob_threshold
+    total = 0
+    current = 0
 
+    duration = 0
+    in_ROI = [380,450]
+    out_ROI = [550, 400]
+    state = 'empty'
+    
+    ### TODO: Load the model through `infer_network` ###
+    infer_network.load_model(args.model, args.device, CPU_EXTENSION, num_requests=0)
+
+    # Get a Input blob shape
+    net_input_shape = infer_network.get_input_shape()
+    print("Input shape: ", net_input_shape)
+
+   
 def main():
     """
     Load the network and parse the output.
