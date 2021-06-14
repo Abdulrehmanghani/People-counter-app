@@ -1,14 +1,48 @@
 # People-counter-app
 This project is from the Udacity nano degree Intel edge AI IoT program. The main idea to this project is use a model from any framework, and optimze it bu using openVino toolkit. Make the infrence on the video from the resources directory by using optimized model. And count the number of people in the frame and total number of people in the video. Calculte the average time of person stayed in video. And send all these calculated values along-with the image to the webpage using Mosca server.
 ![Arch](./resources/peopl_counter_design_block.png)
-# What is it:
+## What is it:
 OpenVino toolkit is used to optimize the model. During optimization opevino decrease the model size and oprations. Due drcrease in the size model load time is also decrease and inference time is also decrease. Hence we deploy the optimized model on low cost embedded devices.
-# About the code:
+## About the code:
 We use tensorFlow object detection model in this code. We use the the ssdmobilenet_v2 and run the inference in the 
 [Note-book](https://github.com/tensorflow/models/blob/master/research/object_detection/colab_tutorials/inference_from_saved_model_tf2_colab.ipynb) 
 and the optimized the model usin openvino. The infrence on the optimized model is in the 
 [main.py](https://github.com/Abdulrehmanghani/People-counter-app/blob/main/main.py) file.
 
+### Model zoo
+We have use [SSD MobileNet v2 320x320](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_mobilenet_v2_320x320_coco17_tpu-8.tar.gz) tensorflow object detection [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
+
+<table>
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model name</th>
+      <th>Speed (ms)</th>
+      <th>COCO mAP</th>
+      <th>Outputs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SSD MobileNet v2 320x320</td>
+      <td>19</td>
+      <td>20.2</td>
+      <td>Boxes</td> 
+    </tr>
+  </tbody>      
+</table>
+
+  To run the inference on the model use this [Note-book.](https://github.com/Abdulrehmanghani/People-counter-app/blob/main/inference_from_saved_model_tf2_colab.ipynb)</br>
+  To download the model from the terminalrun this command:
+  ```
+  wget http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz
+tar -xf ssd_mobilenet_v2_coco_2018_03_29.tar.gz
+```
+To optimize the model use this command in the terminal</br>  
+  ```
+python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo_tf.py –input_model ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json -- tensorflow_object_detection_api_pipeline_config ssd_mobilenet_v2_coco_2018_03_29/pipeline.config -- reverse_input_channels -o optimized_model
+  ```
 
 ## Requirements
 
