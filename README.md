@@ -10,7 +10,7 @@ and the optimized the model usin openvino. The infrence on the optimized model i
 [main.py](https://github.com/Abdulrehmanghani/People-counter-app/blob/main/main.py) file.
 
 ### Model zoo
-We have use [SSD MobileNet v2 320x320](http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_mobilenet_v2_320x320_coco17_tpu-8.tar.gz) tensorflow object detection [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
+We have use [SSD MobileNet v2 ](http://download.tensorflow.org/models/object_detection/ssd_mobilenet_v2_coco_2018_03_29.tar.gz) tensorflow object detection [model zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf2_detection_zoo.md)
 
 <table>
   <thead>
