@@ -41,7 +41,7 @@ tar -xf ssd_mobilenet_v2_coco_2018_03_29.tar.gz
 ```
 To optimize the model use this command in the terminal</br>  
   ```
-python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo_tf.py –input_model ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json -- tensorflow_object_detection_api_pipeline_config ssd_mobilenet_v2_coco_2018_03_29/pipeline.config -- reverse_input_channels -o optimized_model
+python3 /opt/intel/openvino/deployment_tools/model_optimizer/mo_tf.py --input_model ssd_mobilenet_v2_coco_2018_03_29/frozen_inference_graph.pb --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/ssd_v2_support.json --tensorflow_object_detection_api_pipeline_config ssd_mobilenet_v2_coco_2018_03_29/pipeline.config --reverse_input_channels -o optimized_model
   ```
 
 ## Requirements
